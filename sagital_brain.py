@@ -10,8 +10,10 @@ def run_averages():
     # Create new list to save the averages per each plane
     # The number of steps coronal planes may change in the future
     coronal_planes = 20
+    # The number of sagital sections from front to back, it may change in the future
+    sagital_sections = 20
     sagital_averages = []
-    for i in range(20):
+    for i in range(sagital_sections):
         total = 0
         for j in range(coronal_planes):
             total = total + int(planes[i][j])
