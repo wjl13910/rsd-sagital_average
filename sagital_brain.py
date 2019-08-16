@@ -1,3 +1,4 @@
+import numpy as np
 
 def run_averages():
     # Open the file to analyse
@@ -13,6 +14,8 @@ def run_averages():
     # The number of sagital sections from front to back, it may change in the future
     sagital_sections = 20
     sagital_averages = []
+    # let's use NumPy! It's faster!!
+    planes = np.array(planes)
     for i in range(sagital_sections):
         total = 0
         for j in range(coronal_planes):
