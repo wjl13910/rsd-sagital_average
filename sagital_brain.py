@@ -20,8 +20,6 @@ def run_averages(file_input, file_output):
     # Create new list to save the averages per each plane
     # The number of steps coronal planes may change in the future
     coronal_planes = len(planes[0])
-    # The number of sagital sections from front to back, it may change in the future
-    sagital_sections = len(planes)
     sagital_averages = []
     # let's use NumPy! It's faster!!
     planes = np.array(planes)
