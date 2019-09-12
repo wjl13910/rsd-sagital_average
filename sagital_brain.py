@@ -25,8 +25,8 @@ def run_averages(file_input, file_output):
     planes = np.array(planes)
     for sagital_sect in planes:
         total = 0
-        for j in range(coronal_planes):
-            total = total + int(sagital_sect[j])
+        for coronal_plane in sagital_sect:
+            total = total + int(coronal_plane)
         sagital_averages.append(str(total/coronal_planes))
 
     # write it out on my file
