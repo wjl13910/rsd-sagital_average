@@ -18,16 +18,12 @@ def run_averages(file_input, file_output):
                 planes.append([int(x) for x in line.split("\n")[0].split(',')])
 
     # Create new list to save the averages per each plane
-    # The number of steps coronal planes may change in the future
-    coronal_planes = len(planes[0])
     sagital_averages = []
     # let's use NumPy! It's faster!!
     planes = np.array(planes)
     for sagital_sect in planes:
-        total = 0
-        for coronal_plane in sagital_sect:
-            total = total + int(coronal_plane)
-        sagital_averages.append(str(total/coronal_planes))
+        average = np.mean(sagital_sect)
+        sagital_averages.append(str(average))
 
     # write it out on my file
     if file_output is None:
