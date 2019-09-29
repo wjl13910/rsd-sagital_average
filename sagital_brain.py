@@ -21,15 +21,15 @@ def run_averages(file_input, file_output):
     sagital_averages = []
     # let's use NumPy! It's faster!!
     planes = np.array(planes)
-    for sagital_sect in planes:
-        average = np.mean(sagital_sect)
-        sagital_averages.append(str(average))
+    averages = np.mean(planes, axis=0)
+    # Convert the np array into a list
+    averages = [str(x) for x in averages]
 
     # write it out on my file
     if file_output is None:
         file_output = 'brain_average.csv'
     with open(file_output, 'w') as myoutput:
-             myoutput.write(','.join(sagital_averages) +  '\n')
+             myoutput.write(','.join(averages) +  '\n')
 
 if __name__ == "__main__":
     import sys
